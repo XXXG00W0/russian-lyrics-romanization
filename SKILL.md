@@ -55,7 +55,8 @@ suspect flattened ё in a word that matters, check it against the dictionary
 
 ### 2. Stress the text
 
-`$SKILL_DIR` is this skill's own directory - the one containing this SKILL.md.
+`$SKILL_DIR` below stands for this skill's own directory - the one containing this
+SKILL.md. Substitute the full path if your shell does not have it set.
 
 ```bash
 python3 "$SKILL_DIR/scripts/stress.py" song.txt            # JSON: text + report
