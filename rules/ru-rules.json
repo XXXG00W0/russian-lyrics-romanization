@@ -1,0 +1,131 @@
+{
+  "version": "1.0",
+  "note": "Single source of truth for the LETTER MAPS and word-level pronunciation rules. The respelling algorithm itself lives in scripts/render.py. Profile sources: bgn = ICU ru_ru_Latn_BGN.txt; iso9 = ISO 9:1995; gost = GOST 7.79-2000 System B (Russian column, ru.wikipedia ISO 9 article); alalc = ALA-LC Russian table (loc.gov), cross-checked against the iuliia ala_lc schema; lyrics = the informal convention used by lyric/fan sites (iuliia 'wikipedia' schema).",
+
+  "profiles": {
+    "lyrics": {
+      "label": "Lyric-site style: readable to an English speaker, ь/ъ dropped.",
+      "letters": {
+        "а": "a", "б": "b", "в": "v", "г": "g", "д": "d", "е": "e", "ё": "yo",
+        "ж": "zh", "з": "z", "и": "i", "й": "y", "к": "k", "л": "l", "м": "m",
+        "н": "n", "о": "o", "п": "p", "р": "r", "с": "s", "т": "t", "у": "u",
+        "ф": "f", "х": "kh", "ц": "ts", "ч": "ch", "ш": "sh", "щ": "shch",
+        "ъ": "", "ы": "y", "ь": "", "э": "e", "ю": "yu", "я": "ya"
+      },
+      "iotated": { "е": "ye", "ё": "yo", "ю": "yu", "я": "ya" },
+      "ends": { "ый": "y", "ий": "iy", "ой": "oy" }
+    },
+
+    "bgn": {
+      "label": "BGN/PCGN: the de-facto standard for English-language maps and press.",
+      "letters": {
+        "а": "a", "б": "b", "в": "v", "г": "g", "д": "d", "е": "e", "ё": "ë",
+        "ж": "zh", "з": "z", "и": "i", "й": "y", "к": "k", "л": "l", "м": "m",
+        "н": "n", "о": "o", "п": "p", "р": "r", "с": "s", "т": "t", "у": "u",
+        "ф": "f", "х": "kh", "ц": "ts", "ч": "ch", "ш": "sh", "щ": "shch",
+        "ъ": "ʺ", "ы": "y", "ь": "ʹ", "э": "e", "ю": "yu", "я": "ya"
+      },
+      "iotated": { "е": "ye", "ё": "yë" },
+      "ends": { "ый": "yy", "ий": "iy", "ой": "oy" }
+    },
+
+    "iso9": {
+      "label": "ISO 9:1995: reversible, one Latin letter per Cyrillic letter.",
+      "letters": {
+        "а": "a", "б": "b", "в": "v", "г": "g", "д": "d", "е": "e", "ё": "ë",
+        "ж": "ž", "з": "z", "и": "i", "й": "j", "к": "k", "л": "l", "м": "m",
+        "н": "n", "о": "o", "п": "p", "р": "r", "с": "s", "т": "t", "у": "u",
+        "ф": "f", "х": "h", "ц": "c", "ч": "č", "ш": "š", "щ": "ŝ",
+        "ъ": "ʺ", "ы": "y", "ь": "ʹ", "э": "è", "ю": "û", "я": "â"
+      },
+      "iotated": {},
+      "ends": {}
+    },
+
+    "gost": {
+      "label": "GOST 7.79-2000 System B: digraphs, no diacritics (Russian national standard).",
+      "letters": {
+        "а": "a", "б": "b", "в": "v", "г": "g", "д": "d", "е": "e", "ё": "yo",
+        "ж": "zh", "з": "z", "и": "i", "й": "j", "к": "k", "л": "l", "м": "m",
+        "н": "n", "о": "o", "п": "p", "р": "r", "с": "s", "т": "t", "у": "u",
+        "ф": "f", "х": "x", "ц": "c", "ч": "ch", "ш": "sh", "щ": "shh",
+        "ъ": "``", "ы": "y`", "ь": "`", "э": "e`", "ю": "yu", "я": "ya"
+      },
+      "iotated": { "е": "ye", "ё": "yo" },
+      "ends": {}
+    },
+
+    "alalc": {
+      "label": "ALA-LC: library cataloguing standard.",
+      "letters": {
+        "а": "a", "б": "b", "в": "v", "г": "g", "д": "d", "е": "e", "ё": "ë",
+        "ж": "zh", "з": "z", "и": "i", "й": "ĭ", "к": "k", "л": "l", "м": "m",
+        "н": "n", "о": "o", "п": "p", "р": "r", "с": "s", "т": "t", "у": "u",
+        "ф": "f", "х": "kh", "ц": "t͡s", "ч": "ch", "ш": "sh", "щ": "shch",
+        "ъ": "ʺ", "ы": "y", "ь": "ʹ", "э": "ė", "ю": "i͡u", "я": "i͡a"
+      },
+      "iotated": {},
+      "ends": {}
+    }
+  },
+
+  "respelling": {
+    "note": "Used to build the English pronunciation line. The word is first rewritten into a phonetic Cyrillic form (word rules + voicing assimilation + final devoicing), then split into syllables and mapped here.",
+    "consonants": {
+      "б": "b", "в": "v", "г": "g", "д": "d", "ж": "zh", "з": "z", "й": "y",
+      "к": "k", "л": "l", "м": "m", "н": "n", "п": "p", "р": "r", "с": "s",
+      "т": "t", "ф": "f", "х": "kh", "ц": "ts", "ч": "ch", "ш": "sh", "щ": "shch"
+    },
+    "vowels_stressed": {
+      "а": "a", "о": "o", "у": "oo", "ы": "i", "и": "ee", "э": "e",
+      "е": "ye", "ё": "yo", "ю": "yu", "я": "ya"
+    },
+    "vowels_unstressed": {
+      "а": "a", "о": "a", "у": "u", "ы": "i", "и": "i", "э": "e",
+      "е": "ye", "ё": "yo", "ю": "yu", "я": "ya"
+    },
+    "vowel_note": "Unstressed о spells 'a' because that is how it is spoken (akanye). Stressed vowels get the full spelling and, in a word of two or more syllables, capitals. Stressed/unstressed pairs are deliberately not merged: they are the two places a future revision would tune.",
+    "final_devoicing": { "б": "п", "в": "ф", "г": "к", "д": "т", "з": "с", "ж": "ш" },
+    "voicing_pairs": {
+      "п": "б", "ф": "в", "к": "г", "т": "д", "ш": "ж", "с": "з",
+      "б": "п", "в": "ф", "г": "к", "д": "т", "ж": "ш", "з": "с"
+    },
+    "voiced_triggers": ["б", "г", "д", "ж", "з"],
+    "voiceless_triggers": ["п", "ф", "к", "т", "ш", "с", "х", "ц", "ч", "щ"],
+    "hard_always": ["ж", "ш", "ц"],
+    "soft_vowels": ["е", "ё", "ю", "я", "и"],
+
+    "word_rules": [
+      { "where": "suffix", "values": ["ться"], "from": "ться", "to": "ца",
+        "why": "verb ending -ться is spoken [tsə]" },
+      { "where": "suffix", "values": ["тся"], "from": "тся", "to": "ца",
+        "why": "verb ending -тся is spoken [tsə]" },
+      { "where": "suffix", "values": ["ого"], "from": "ого", "to": "ово",
+        "unless": ["много", "немного", "намного", "задолго", "надолго", "недолго", "долго", "строго", "нестрого", "дорого", "недорого", "убого"],
+        "why": "genitive ending -ого is spoken -ovo; the listed adverbs keep [g]" },
+      { "where": "suffix", "values": ["его"], "from": "его", "to": "ево",
+        "why": "genitive ending -его is spoken -evo" },
+      { "where": "word", "values": ["что", "чтобы", "что-то", "что-нибудь", "кое-что", "ничто", "ничего"], "from": "что", "to": "што",
+        "why": "ч in что is spoken [ʂ]" },
+      { "where": "contains", "values": ["конечно", "скучно", "нарочно", "яичница", "булочная", "скворечник"], "from": "чн", "to": "шн",
+        "why": "чн is spoken [ʂn] in a closed set of words" },
+      { "where": "contains", "values": ["здравствуй", "здравствуйте", "чувство", "чувствовать", "чувства", "чувствуешь"], "from": "вств", "to": "ств",
+        "why": "the first в in -вств- is silent" },
+      { "where": "prefix", "values": ["солнц"], "from": "лнц", "to": "нц", "why": "л is silent in every form of солнце" },
+      { "where": "prefix", "values": ["сердц"], "from": "рдц", "to": "рц", "why": "д is silent in every form of сердце" },
+      { "where": "prefix", "values": ["праздн", "поздн"], "from": "здн", "to": "зн", "why": "д is silent" },
+      { "where": "prefix", "values": ["лестниц", "местн", "страстн", "честн", "грустн", "радостн"], "from": "стн", "to": "сн", "why": "т is silent in these stems" },
+      { "where": "suffix", "values": ["стный", "стная", "стное", "стные", "стных", "стного", "стному", "стным", "стной", "стность", "стник", "стника", "стница", "стнице"], "from": "стн", "to": "сн", "why": "т is silent in -стн-" },
+      { "where": "contains", "values": ["счастливый", "счастливая", "счастье", "счастлив", "несчастный", "счёт", "считать", "считаешь", "считает"], "from": "сч", "to": "щ", "why": "сч is spoken [ɕː]" },
+      { "where": "contains", "values": ["мужчина", "мужчины", "женщина", "женщины"], "from": "жч", "to": "щ", "why": "жч/нщ are spoken [ɕː]" },
+      { "where": "contains", "values": ["женщина", "женщины"], "from": "нщ", "to": "ньщ", "why": "keeps the soft n audible" },
+      { "where": "contains", "values": ["помощник", "помощника", "помощница"], "from": "щн", "to": "шн", "why": "щ is spoken [ʂ] before н" },
+      { "where": "contains", "values": ["сегодня", "сегодняшний"], "from": "год", "to": "вод", "why": "г is spoken [v] in сегодня" }
+    ],
+    "word_map": {
+      "пожалуйста": "пожалуста",
+      "сейчас": "сичас",
+      "ее": "её"
+    }
+  }
+}

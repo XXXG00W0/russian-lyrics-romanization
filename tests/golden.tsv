@@ -1,0 +1,57 @@
+# Golden test set: input (with stress marks) <TAB> expected romanization <TAB> expected respelling
+# Run with:  python scripts/verify.py
+# Lines starting with # and blank lines are ignored.
+# The set is deliberately made of the cases that go wrong: ё/е, unstressed о,
+# ы, soft signs, чн/щн, ться, -его/-ого, devoicing, assimilation, homographs.
+
+я	ya	ya
+Я	Ya	ya
+не	ne	nye
+могу́	mogu	ma-GOO
+забы́ть	zabyt	za-BIT
+твои́	tvoi	tva-EE
+глаза́	glaza	gla-ZA
+хорошо́	khorosho	kha-ra-SHO
+доро́га	doroga	da-RO-ga
+за́мок	zamok	ZA-mak
+замо́к	zamok	za-MOK
+мо́ю	moyu	MO-yu
+мою́	moyu	ma-YU
+всё	vsyo	fsyo
+все	vse	fsye
+её	yeyo	ye-YO
+что	chto	shto
+его́	yego	ye-VO
+ничего́	nichego	ni-chye-VO
+сего́дня	segodnya	sye-VO-dnya
+здра́вствуй	zdravstvuy	ZDRA-stvuy
+улыба́ться	ulybatsya	u-li-BA-tsa
+друг	drug	drook
+хлеб	khleb	khlyep
+кровь	krov	krof
+жизнь	zhizn	zhizn
+семья́	semya	sye-MYA
+по́езд	poyezd	PO-yest
+де́вочка	devochka	DYE-vach-ka
+молоко́	moloko	ma-la-KO
+тётя	tyotya	TYO-tya
+пять	pyat	pyat
+со́лнце	solntse	SON-tse
+се́рдце	serdtse	SYER-tse
+со́лнцем	solntsem	SON-tsem
+ле́стницы	lestnitsy	LYE-sni-tsi
+по́здний	pozdniy	PO-zniy
+коне́чно	konechno	ka-NYESH-na
+помо́щник	pomoshchnik	pa-MOSH-nik
+вокза́л	vokzal	vag-ZAL
+сде́лать	sdelat	ZDYE-lat
+ло́жка	lozhka	LO-shka
+мёд	myod	myot
+пожа́луйста	pozhaluysta	pa-ZHA-lu-sta
+сейча́с	seychas	si-CHAS
+си́ний	siniy	SEE-niy
+до́брый	dobry	DO-briy
+дождь	dozhd	dosht
+шесть	shest	shest
+Я не могу́ забы́ть твои́ глаза́	Ya ne mogu zabyt tvoi glaza	ya nye ma-GOO za-BIT tva-EE gla-ZA
+Мы улыба́емся и поём	My ulybayemsya i poyom	mi u-li-BA-yem-sya ee pa-YOM
